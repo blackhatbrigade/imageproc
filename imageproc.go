@@ -6,11 +6,9 @@ import (
   "golang.org/x/sys/unix"
 )
 
-func Test() {
+func Test(devName string) {
   fmt.Println("Image processing imported successfully")
   fmt.Println("Capturing image from webcam")
-
-  devName := "/dev/video0"
 
   // open the device and get a file descriptor
   devFile, _ := os.OpenFile(devName, sys.O_RDWR|sys.O_NONBLOCK, 0)
